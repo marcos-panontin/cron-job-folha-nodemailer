@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 
 // After the scrapeHeadline function, you can call this function to send the email
 async function sendEmail(headline, screenshotPath) {
-  const currentTime = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+  const currentTime = new Date().toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' });
   let mailOptions = {
     // from: 'your_email@gmail.com',
     to: process.env.EMAIL,
