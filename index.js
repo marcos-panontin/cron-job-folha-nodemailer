@@ -5,7 +5,11 @@ const { sendEmail } = require('./nodemailer');
 
 async function scrapeHeadline() {
   // Launch a new browser session.
-const browser = await puppeteer.launch({ headless: 'new' });
+const browser = await puppeteer.launch({
+  headless: true,
+  executablePath: 'google-chrome-stable',
+  args: ['--no-sandbox', '--disable-setuid-sandbox']
+});
   // Open a new page.
   const page = await browser.newPage();
   // Navigate to the Folha de S. Paulo website.
