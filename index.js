@@ -5,7 +5,7 @@ const { sendEmail } = require('./nodemailer');
 
 async function scrapeHeadline() {
   // Launch a new browser session.
-  const browser = await puppeteer.launch();
+const browser = await puppeteer.launch({ headless: 'new' });
   // Open a new page.
   const page = await browser.newPage();
   // Navigate to the Folha de S. Paulo website.
