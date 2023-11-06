@@ -17,7 +17,7 @@ async function sendEmail(headline, screenshotPath) {
   let mailOptions = {
     // from: 'your_email@gmail.com',
     to: process.env.EMAIL,
-    subject: `Manchete da Folha às ${currentTime}: ${headline}`,
+    subject: `[CRON] Manchete da Folha às ${currentTime}: ${headline}`,
     html: `<h1>A manchete de hoje às ${currentTime} é:</h1> <h2> ${headline}</h2>`,
     text: `NO_HTML: Today's headline is: ${headline}`,
     attachments: [
