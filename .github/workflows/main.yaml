@@ -4,6 +4,8 @@ on:
   schedule:
     # Runs at 8 AM UTC every day. You can adjust the cron schedule as needed.
     - cron:  '*/2 * * * *'
+  workflow_dispatch:
+
 
 jobs:
   scrape_and_email:
