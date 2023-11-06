@@ -18,7 +18,13 @@ async function sendEmail(headline, screenshotPath) {
     // from: 'your_email@gmail.com',
     to: process.env.EMAIL,
     subject: `[CRON] Manchete da Folha às ${currentTime}: ${headline}`,
-    html: `<h1>A manchete de hoje às ${currentTime} é:</h1> <h2> ${headline}</h2>`,
+    html: `
+      <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding: 20px;">
+        <h1 style="color: #333; text-align: center;">A manchete de hoje às ${currentTime} é:</h1>
+        <h2 style="background-color: #f8f8f8; padding: 10px; border-left: 5px solid blue; margin: 20px 0; color: #333;">${headline}</h2>
+        <img src="cid:screenshot" style="max-width: 100%; height: auto; display: block; margin: 10px auto; border: 1px solid #ddd; padding: 10px;"/>
+      </div>
+    `,
     text: `NO_HTML: Today's headline is: ${headline}`,
     attachments: [
       {
