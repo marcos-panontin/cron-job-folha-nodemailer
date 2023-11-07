@@ -2,8 +2,7 @@ name: Scrape and Email Workflow
 
 on:
   schedule:
-    # Runs at 8 AM UTC every day. You can adjust the cron schedule as needed.
-    - cron:  '51 * * * *'
+    - cron:  '55 5 * * *'
   workflow_dispatch:
 
 
